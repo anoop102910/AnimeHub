@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background-color: black;
+  color: white;
+}
+
+
+.h1-primary{
+  @apply text-5xl text-slate-300 font-extrabold
+}
+.h4-primary{
+  @apply text-2xl font-bold
+}
+
+.p-primary{
+  @apply text-sm
+}
+
+.bg-title {
+  @apply bg-gradient-to-b from-green-400  to-white;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent
+}
+
+.truncate-4-lines {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.animate-float {
+  animation: floatAnimation 5s infinite ease-in-out;
+}
+
+@keyframes floatAnimation {
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
