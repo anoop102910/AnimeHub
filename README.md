@@ -3,7 +3,7 @@
 AnimeHub is a website dedicated to providing a seamless experience for anime enthusiasts. Explore a vast collection of your favorite anime series and movies, discover new releases, classics, and hidden gems all in one place.
 
 ## Website Link
-[AnimeHub](#) <!-- Add the actual link here -->
+[AnimeHub]( https://animehub-102910.vercel.app/)
 
 ## Features
 - **Extensive Collection:** Browse through a diverse range of anime content.
