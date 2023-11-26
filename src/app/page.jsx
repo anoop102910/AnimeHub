@@ -1,18 +1,26 @@
-import Image from "next/image";
-import React from "react";
+import AnimeCard from "@/components/AnimeCard";
+import { fetchAnime } from "@/utils/api/fetchAnime";
+import MoreAnime from "./MoreAnime";
+import Hero from "@/components/Hero";
+import Footer from "@/components/Footer";
 
-function Home() {
+const page = 1;
+async function Home() {
+  const data = await fetchAnime(page);
   return (
-    <div className="md:flex  justify-between items-center">
-      <div className="md:w-[40%] relative">
-        <h1 className="text-6xl font-bold leading-[3.8rem] bg-title">Better Design for your digital products</h1>
-        <p className="text-lg mt-10">
-          Turning your Idea into Reality. We bring together the teams from Industry
-        </p>
-        <button className="bg-green-700 px-4 py-2 roumd text-sm rounded-md mt-4 text-white hover:-translate-y-1 transition-all">See our works</button>
+    <>
+    <Hero/>
+      <div className="wrapper px-10 md:pt-32 sm:p-4 md:max-w-[1200px] mx-auto text-white mt-20">
+        <div className=" w-full flex-wrap gap-8 sm:gap-12 md:gap-16 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4">
+          {data.map((anime, index) => {
+            return <AnimeCard key={anime.id} index={index} anime={anime} />;
+          })}
+        </div>
+        <MoreAnime />
+        {/* <Footer/> */}
       </div>
-      <Image className="animate-float" width="600" height="600" src="/hero2.png" alt="" />
-    </div>
+    </>
   );
 }
+
 export default Home;
