@@ -1,16 +1,22 @@
 import React from "react";
 import { MotionDiv } from "./MotionDiv";
 
-function AnimeCard({ anime ,index}) {
-    const variants = {
-        hidden:{opacity:0},
-        animate:{opacity:1}
-    }
+function AnimeCard({ anime, index }) {
+  const variants = {
+    hidden: { opacity: 0 },
+    animate: { opacity: 1 },
+  };
+  console.log(index);
   return (
-    <MotionDiv variants={variants} initial="hidden" animate="animate" transition={{delay:index*0.25}}>
+    <MotionDiv
+      variants={variants}
+      initial="hidden"
+      animate="animate"
+      transition={{ delay: index * 0.25 }}
+    >
       <div key={anime.id} className="w-full rounded-md overflow-hidden ">
         <img
-          className="w-full h-[360px] object-cover object-center hover:scale-105 transition duration-100 rounded-md"
+          className="w-full h-[220px] md:h-[360px] object-cover object-center hover:scale-105 transition duration-100 rounded-md"
           src={`https://shikimori.one/${anime.image.original}`}
           alt=""
         />

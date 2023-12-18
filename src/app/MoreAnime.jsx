@@ -5,8 +5,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 let page = 1;
+let index = 1;
 function MoreAnime() {
-  const [ref, inView] = useInView({ rootMargin: "0px 0px -100px 0px" });
+  const [ref, inView] = useInView({ rootMargin: "-100px 0px 0px 0px" });
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(null);
   useEffect(() => {
@@ -24,9 +25,10 @@ function MoreAnime() {
 
   return (
     <>
-      <div className="mt-16 w-full flex-wrap gap-8 sm:gap-12 md:gap-16 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4">
-        {data.map((anime, index) => {
-          return <AnimeCard key={anime.id} index={index} anime={anime} />;
+      <div className="mt-16 w-full flex-wrap gap-8  sm:gap-12 md:gap-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+        {data.map((anime) => {
+          index++;
+          return <AnimeCard key={anime.id} index={index%8} anime={anime} />;
         })}
       </div>
       <div ref={ref} className="w-full pt-10 flex items-center justify-center ">

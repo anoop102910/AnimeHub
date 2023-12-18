@@ -10,14 +10,14 @@ async function Home() {
   return (
     <>
     <Hero/>
-      <div className="wrapper px-10 md:pt-32 sm:p-4 md:max-w-[1200px] mx-auto text-white mt-20">
-        <div className=" w-full flex-wrap gap-8 sm:gap-12 md:gap-16 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4">
+      <div className="wrapper p-4 md:pt-32 sm:p-4 md:max-w-[1200px] mx-auto text-white ">
+        <div className=" w-full flex-wrap gap-8 sm:gap-12 md:gap-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
           {data.map((anime, index) => {
             return <AnimeCard key={anime.id} index={index} anime={anime} />;
           })}
         </div>
         <MoreAnime />
-        {/* <Footer/> */}
+        <Footer/>
       </div>
     </>
   );
